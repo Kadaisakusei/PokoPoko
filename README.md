@@ -1,24 +1,33 @@
 # README
+# PokoPoko
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+  イラスト投稿用SNS
+### サイトテーマ
+  自身の描いたイラストを、タイトルとコメントの他に”ジャンル名”をつけて投稿することが出来る。ジャンル名はユーザー毎に
+  最大５つ設定することができ、閲覧者はそのユーザーページに遷移した際、ジャンル検索を使用することが可能。
 
-Things you may want to cover:
+### テーマを選んだ理由
+  交流半分、イラスト置き場半分といった用途の、機能がシンプルなアプリケーションを作成したいと思った
+  画像投稿サイトPixivを簡易化した内容だが、UIはBookersを基に作成予定な上にタイムライン機能を実装予定なため、
+  使用感は差別化できると考える
 
-* Ruby version
+### ターゲットユーザ
+  イラストを描く人
 
-* System dependencies
+### 主な利用シーン
+  完成したイラストをどこかに上げたい時、または一日の成果や練習の記録をいしたい時に利用する
 
-* Configuration
+## 設計書
 
-* Database creation
 
-* Database initialization
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。

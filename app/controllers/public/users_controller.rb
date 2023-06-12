@@ -1,10 +1,10 @@
-class UsersController < ApplicationController
-  def show
-  end
+class Public::UsersController < ApplicationController
+  #def show
+  #end
 
-  def edit
-  end
+  #def edit
+  #end
 
-  def index
-  end
+  #def index
+  #end
 end

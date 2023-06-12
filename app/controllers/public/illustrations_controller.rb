@@ -1,4 +1,4 @@
-class IllustrationsController < ApplicationController
+class Public::IllustrationsController < ApplicationController
   def new
   end
 

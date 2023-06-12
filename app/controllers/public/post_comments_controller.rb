@@ -1,4 +1,4 @@
-class PostCommentsController < ApplicationController
+class Public::PostCommentsController < ApplicationController
   def new
   end
 

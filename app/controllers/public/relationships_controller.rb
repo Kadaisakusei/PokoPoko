@@ -1,2 +1,2 @@
-class RelationshipsController < ApplicationController
+class Public::RelationshipsController < ApplicationController
 end

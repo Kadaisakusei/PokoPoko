@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag 'public/homes' %>
+<nav class="navbar navbar-expand-lg" style="background-color: #FFFFFF;">
+
+  <div class="container">
+    <div class="row">
+      <a class="navbar-brand p-3" href="/"></a>
+        <% if customer_signed_in? %>
+          <h4 class="navbar-text mt-5">ようこそ、<%= current_customer.family_name %>さん！</h4>
+        <% end %>
+        <div class="ml-auto headers">
+         <div class="collapse navbar-collapse align-items-center" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+          <% if admin_signed_in? %>
+            <%= render 'layouts/headeradmin' %>
+          <% elsif customer_signed_in? %>
+            <%= render 'layouts/headercustomer' %>
+          <% else %>
+            <%= render 'layouts/headersignin' %>
+          <% end %>
+         </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row ml-auto">
+          <div class="input-group">
+            <input type="text" id="txt-search" class="form-control input-group-prepend" placeholder="例：ショートケーキ"></input>
+              <span class="input-group-btn input-group-append">
+              <submit type="submit" id="btn-search" class="btn btn-pink"><i class="fas fa-search"></i> 検索</submit>
+              </span>
+          　</div>
+        　</div>
+      </div>
+    </div>
+  </div>
+</nav>

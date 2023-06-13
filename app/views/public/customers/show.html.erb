@@ -1,0 +1,14 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'info', customer: @customer %>
+      <h2 class="mt-3">New Illustration</h2>
+      <%= render 'illustrations/form', illustration: @illustrations %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>Books</h2>
+      <%= render 'illustrations/index',illustrations: @illustrations %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn btn-vivid">
+      <li>
+        <%=  link_to customers_show_path,class: 'nav-link text-white' do %>
+          <i class="fas fa-solid fa-user"></i> マイページ
+        <% end %>
+      </li>
+    </button>
+    <button type="button" class="btn btn-deep">
+      <li>
+        <%= link_to  destroy_customer_session_path, method: :delete, class: 'nav-link text-white' do %>
+        <i class="fas fa-solid fa-arrow-right"></i> ログアウト
+        <% end %>
+      </li>
+    </button>
+</div>

@@ -1,6 +1,6 @@
 <table class='table'>
   <tr>
-  <td><%= image_tag customer.get_profile_image, size:'100x100' %></td>
+  <td><%= image_tag customer.get_profile_image(100,100), size:'100x100' %></td>
   </tr>
   <tr>
 	  <th>name</th>
@@ -12,11 +12,11 @@
   </tr>
   <tr>
 	  <th>フォロー数:</th>
-	  <th><%= link_to customer.followings.count, customer_followings_path(customer.id) %></th>
+	  <th><%#= link_to customer.followings.count, customer_followings_path(customer.id) %></th>
   </tr>
    <tr>
 	  <th>フォロワー数:</th>
-	  <th><%= link_to customer.followers.count, customer_followers_path(customer.id) %></th>
+	  <th><%#= link_to customer.followers.count, customer_followers_path(customer.id) %></th>
   </tr>
 </table>
 

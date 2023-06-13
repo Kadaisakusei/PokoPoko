@@ -11,7 +11,7 @@ class Public::CustomersController < ApplicationController
      if @customer == current_customer
        render :edit
      else
-       redirect_to customer_path(current_user)
+       redirect_to customer_path(current_customer)
      end
   end
 
@@ -34,7 +34,7 @@ class Public::CustomersController < ApplicationController
 
   private
     def customer_params
-      params.require(:customer).permit(:name, :introduction, :image)
+      params.require(:customer).permit(:name, :introduction, :profile_image)
     end
 
 end

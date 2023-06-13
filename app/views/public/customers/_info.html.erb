@@ -12,11 +12,11 @@
   </tr>
   <tr>
 	  <th>フォロー数:</th>
-	  <th><%#= link_to customer.followings.count, customer_followings_path(customer.id) %></th>
+	  <th><%= link_to customer.followings.count, customer_followings_path(customer.id) %></th>
   </tr>
    <tr>
 	  <th>フォロワー数:</th>
-	  <th><%#= link_to customer.followers.count, customer_followers_path(customer.id) %></th>
+	  <th><%= link_to customer.followers.count, customer_followers_path(customer.id) %></th>
   </tr>
 </table>
 

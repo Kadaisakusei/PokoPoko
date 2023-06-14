@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2023_06_12_044651) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "illustration_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -76,14 +76,14 @@ ActiveRecord::Schema.define(version: 2023_06_12_044651) do
   create_table "illustrations", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "user_id"
+    t.integer "customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "post_comments", force: :cascade do |t|
     t.text "comment"
-    t.integer "user_id"
+    t.integer "customer_id"
     t.integer "illustration_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

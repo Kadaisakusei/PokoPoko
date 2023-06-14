@@ -2,7 +2,7 @@ class Public::IllustrationsController < ApplicationController
 
   def show
     @illustration = Illustration.find(params[:id])
-    @customer = Customer.find(@book.user_id)
+    @customer = Customer.find(@illustration.customer_id)
     @post_comment = PostComment.new
   end
 
@@ -50,7 +50,7 @@ class Public::IllustrationsController < ApplicationController
   private
 
   def illustration_params
-    params.require(:illustration).permit(:title, :body, :post_illustration)
+    params.require(:illustration).permit(:title, :body, :illustration_image)
   end
 
   private

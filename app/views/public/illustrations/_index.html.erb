@@ -1,36 +1,33 @@
-<table class='table table-hover table-inverse'>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% illustrations.each do |illustration| %>
+<% illustrations.each do |illustration| %>
+  <table class='table table-hover table-inverse'>
       <tr>
+        <td>
+          <% if illustration.illustration_image.attached? %>
+            <%= link_to illustration_path(illustration.id) do %>
+              <%= image_tag illustration.illustration_image, size: "160x160" %>
+              <% end %>
+          <% end %>
+        </td>
         <td><%= link_to illustration.title,illustration %></td>
         <td><%= illustration.body %></td>
         <td>
           <% if illustration.favorited_by?(current_customer) %>
-          <p>
-            <%= link_to illustration_favorites_path(book), method: :delete do %>
-              ♥<%= illustration.favorites.count %> いいね
-          <% end %>
-          </p>
+            <p>
+              <%= link_to illustration_favorites_path(illustration), method: :delete do %>
+                ♥<%= illustration.favorites.count %> いいね
+              <% end %>
+            </p>
           <% else %>
-          <p>
-            <%= link_to illustration_favorites_path(illustration), method: :post do %>
-              ♡<%= illustration.favorites.count %> いいね
-          <% end %>
-          </p>
+            <p>
+              <%= link_to illustration_favorites_path(illustration), method: :post do %>
+                ♡<%= illustration.favorites.count %> いいね
+              <% end %>
+            </p>
           <% end %>
         </td>
         <td>
           <p>コメント件数：<%= illustration.post_comments.count %></p>
         </td>
       </tr>
-  </tbody>
-  <% end %>
-</table>
+  </table>
+<% end %>

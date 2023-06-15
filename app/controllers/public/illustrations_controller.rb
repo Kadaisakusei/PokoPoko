@@ -43,7 +43,7 @@ class Public::IllustrationsController < ApplicationController
 
   def destroy
     @illustration = Illustration.find(params[:id])
-    @illustration.destoy
+    @illustration.destroy
     redirect_to illustrations_path
   end
 

@@ -36,17 +36,20 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
     #resources :customers, only: [:index, :show, :edit, :create, :update, :destroy]
     resources :customers do
-      resource :relationships, only: [:create, :destroy]
+      resource :relationships, only: [:create, :destroy, :index]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
     end
     resources :illustrations, only: [:new, :create, :index, :show, :edit, :destroy, :update] do
       resources :favorites, only: [:create, :destroy]
     end
+    resources :post_comments, only: [:new, :index, :show, :create, :edit, :destroy, :update]
     resources :registrations, only: [:new, :create]
     resources :sessions, only: [:new, :create, :destroy]
 
   end
+
+  get '/search', to: 'searches#search'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

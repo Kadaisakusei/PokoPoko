@@ -1,7 +1,7 @@
 class Public::PostCommentsController < ApplicationController
 
   def create
-    illustration = Illustration.find(params[:illustration_id])
+    illustration = Illustration.find(params[:format])
     comment = current_customer.post_comments.new(post_comment_params)
     comment.illustration_id = illustration.id
     comment.save
@@ -12,7 +12,7 @@ class Public::PostCommentsController < ApplicationController
 
   def destroy
     PostComment.find(params[:id]).destroy
-    redirect_to illustration_path(params[:book_id])
+    redirect_to illustration_path(params[:illustration_id])
   end
 
 
@@ -20,7 +20,7 @@ class Public::PostCommentsController < ApplicationController
   private
 
   def post_comment_params
-    params.require(:post_comment).permit(:comment)
+    params.require(:post_comment).permit(:comment, :illustration_id)
   end
 
   def illustration_params

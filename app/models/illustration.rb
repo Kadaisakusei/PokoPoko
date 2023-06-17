@@ -11,6 +11,9 @@ class Illustration < ApplicationRecord
 
   has_many :post_comments, dependent: :destroy
 
+ has_many :tagmaps, dependent: :destroy
+ has_many :tags, through: :tagmaps
+ 
   has_one_attached :illustration_image
     def get_illustration(width, height)
       unless illustration.attached?

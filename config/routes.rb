@@ -40,6 +40,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
     end
+    get 'newly_arrived' => 'illustrations#newly_arrived', as: 'newly_arrived'
     resources :illustrations, only: [:new, :create, :index, :show, :edit, :destroy, :update] do
       resources :favorites, only: [:create, :destroy]
     end

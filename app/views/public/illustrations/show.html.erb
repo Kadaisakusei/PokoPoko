@@ -37,4 +37,9 @@
                 <%= f.submit "送信する" %>
               <% end %>
             </div>
+
+            <% @illustration.tags.each do |tag|%>
+            <%= tag.tag_name%>
+            <% end %>
+
 </div>

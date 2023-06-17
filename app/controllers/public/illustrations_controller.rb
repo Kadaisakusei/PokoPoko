@@ -12,6 +12,19 @@ class Public::IllustrationsController < ApplicationController
     @illustration = Illustration.new
   end
 
+  def tag_index
+    if params[:search].present?
+      illustrations = Illustration.illustrations_serach(params[:search])
+    elsif params[:tag_id].present?
+      @tag = Tag.find(params[:tag_id])
+      illustrations = @tag.illustrations.order(created_at: :desc)
+    else
+      illustrations = Illustration.all.order(created_at: :desc)
+    end
+    @tag_lists = Tag.all
+    #@items = Kaminari.paginate_array(items).page(params[:page]).per(10)
+  end
+
   def new
     @illustration = Illustration.new
   end

@@ -1,0 +1,22 @@
+
+<nav class="navbar navbar-expand-lg" style="background-color: #FFFFFF;">
+
+  <div class="container">
+    <div class="row">
+      <a class="navbar-brand p-3" href="/"></a>
+        <div class="ml-auto headers">
+         <div class="collapse navbar-collapse align-items-center" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+          <% if admin_signed_in? %>
+            <%= render 'layouts/headeradmin' %>
+          <% elsif customer_signed_in? %>
+            <%= render 'layouts/headercustomer' %>
+          <% else %>
+            <%= render 'layouts/headersignin' %>
+          <% end %>
+         </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -31,3 +31,8 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+
+illustrations
+post_comments
+users

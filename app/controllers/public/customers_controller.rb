@@ -32,9 +32,18 @@ class Public::CustomersController < ApplicationController
 
   end
 
+  def withdraw
+    if current_customer.update(is_deleted: true)
+       reset_session
+       redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
     def customer_params
-      params.require(:customer).permit(:name, :introduction, :profile_image)
+      params.require(:customer).permit(:is_deleted, :name, :introduction, :profile_image)
     end
 
 end

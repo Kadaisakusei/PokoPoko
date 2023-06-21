@@ -15,6 +15,13 @@
     </button>
     <button type="button" class="btn btn-deep">
       <li>
+        <%= link_to  customers_path, class: 'nav-link text-dark' do %>
+        <i class="fas fa-solid fa-arrow-right"></i> ユーザー一覧
+        <% end %>
+      </li>
+    </button>
+    <button type="button" class="btn btn-deep">
+      <li>
         <%= link_to  tag_index_path, class: 'nav-link text-dark' do %>
         <i class="fas fa-solid fa-arrow-right"></i> タグ一覧
         <% end %>

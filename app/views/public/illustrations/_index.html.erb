@@ -13,7 +13,7 @@
         <td>
           <% if illustration.favorited_by?(current_customer) %>
             <p>
-              <%= link_to illustration_favorite_path(illustration), method: :delete do %>
+              <%= link_to illustration_favorites_path(illustration), method: :delete do %>
                 ♥<%= illustration.favorites.count %> いいね
               <% end %>
             </p>

@@ -47,7 +47,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     get 'newly_arrived' => 'illustrations#newly_arrived', as: 'newly_arrived'
     get 'tag_index' => 'illustrations#tag_index', as: 'tag_index'
     resources :illustrations, only: [:new, :create, :index, :show, :edit, :destroy, :update] do
-      resources :favorites, only: [:create, :destroy]
+      resource :favorites, only: [:create, :destroy]
     end
     resources :post_comments, only: [:new, :index, :show, :create, :edit, :destroy, :update]
     resources :registrations, only: [:new, :create]

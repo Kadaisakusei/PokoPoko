@@ -1,15 +1,17 @@
 <%= stylesheet_link_tag 'customers' %>
-<div class='container px-5 px-sm-0'>
+<div class="container-fluid maxWidth">
   <div class='row'>
-    <div class='col-3 user_info'>
+    <div class='user_info'>
       <h2>User info</h2>
       <%= render 'info', customer: @customer %>
       <h2 class="mt-3">New Illustration</h2>
       <%= render 'public/illustrations/form', illustration: @illustration %>
     </div>
-    <div class='col-9'>
-      <h2>illustrations</h2>
-      <%= render 'public/illustrations/index',illustrations: @illustrations %>
+    <div class="container">
+      <div class='illustrations d-flex flex-wrap'>
+        <h2>illustrations</h2>
+        <%= render 'public/illustrations/index',illustrations: @illustrations %>
+      </div>
     </div>
   </div>
 </div>

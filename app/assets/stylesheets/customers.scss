@@ -3,11 +3,22 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .user_info {
-  background-color: rgba(240, 240, 240, 1);
+  background-color: rgba(245, 245, 245, 1);
   margin-bottom: 50px;
+  margin-left: 150px;
+  margin-top: 50px;
+  padding: 30px;
 }
 
 .w-250px {
   width: 250px !important;
   margin: 0 auto;
+}
+
+.illustrations {
+  margin-left: 50px;
+}
+
+.each_illustration {
+  margin: 10px;
 }

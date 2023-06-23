@@ -1,3 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user_info {
+  background-color: rgba(240, 240, 240, 1);
+  margin-bottom: 50px;
+}
+
+.w-250px {
+  width: 250px !important;
+  margin: 0 auto;
+}

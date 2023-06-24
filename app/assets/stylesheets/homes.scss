@@ -1,3 +1,71 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.top_page_left {
+  width: 15%;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  border-radius: 0px 30px 30px 0px;
+  background-color: rgba(238, 230, 225, 1);
+}
+
+.top_page {
+  width: 50%;
+  height: 600px;
+  position: absolute;
+  right: 0;
+  border-radius: 30px 0px 0px 30px;
+  background-color: rgba(238, 230, 225, 1);
+}
+
+.bold {
+  font-waight:bold
+}
+
+.main {
+  margin-top: 50px;
+  margin-left: 370px;
+}
+
+.top_image {
+  width: 200px;
+  height: 200px;
+}
+
+.btn-gray {
+  background: rgba(170, 178, 189, 1);
+}
+
+.btn-cream {
+  background: rgba(248, 212, 188, 1);
+}
+
+.btn-beige {
+  background: rgba(180, 156, 105, 1);
+}
+
+
+.slash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.slash::before,
+.slash::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  margin: 0px 4px 4px;
+}
+
+.slash::before {
+  transform: rotate(45deg);
+}
+
+.slash::after {
+  transform: rotate(-45deg);
+}

@@ -1,14 +1,25 @@
-<div class="search_friend_by_categorize"></div>
-<div class="uk-text-secondary uk-text-bold"></div>
-<h4>タグで探す</h4>
-<div class="uk-flex uk-flex-wrap"></div>
-<% @tag_lists.each do |list| %>
-<div>
-  <%= link_to list.tag_name, tag_index_path(tag_id: list.id), class: 'tag_list' %>
-</div>
-<% end %>
+<div class="container">
+  <div class='col-3'>
+  <h4>タグで探す</h4>
+  <% @tag_lists.each do |list| %>
+  <div>
+    <%= link_to list.tag_name, tag_index_path(tag_id: list.id), class: 'tag_list' %>
+  </div>
+  <% end %>
+  </div>
 
-<p class="tag_list_box">
-  
-  
-</p>
+  <div class='col-8'>
+    <h4>投稿一覧</h4>
+
+    #タグリスト
+    <% @illustrations.each do |illustration| %>
+
+      <%= link_to illustration_path(illustration.id) do %>
+      <%= image_tag illustration.illustration_image, size: "160x160" %>
+    <% end %>
+
+    <% end %>
+
+  </div>
+
+</div>

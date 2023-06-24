@@ -1,22 +1,23 @@
-<% if @customers.exists? %>
-  <% @customers.each do |customer| %>
-    <table>
-      <thead>
+<div class="container">
+  <% if @customers.exists? %>
+    <% @customers.each do |customer| %>
+      <table>
         <tr>
+          <th>icon</th>
           <th>name</th>
-          <th></th>
+          <th>introduction</th>
           <th></th>
         </tr>
-      </thead>
-      <tbody>
         <tr>
+          <td class="icon bird"><%= image_tag customer.get_profile_image(100,100), size:'100x100' %></td>
           <td><%= customer.name %></td>
-          <td>フォロー数: <%= customer.followings.count %></td>
-          <td>フォロワー数: <%= customer.followers.count %></td>
+          <td><%= customer.introduction %></td>
+          <td><%= link_to 'Show', customer %></td>
         </tr>
-      </tbody>
-    </table>
+      </table>
+    <% end %>
+  <% else %>
+    <p>ユーザーはいません</p>
   <% end %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+</div>
+

@@ -13,15 +13,17 @@ class Public::IllustrationsController < ApplicationController
   end
 
   def tag_index
+    @illustrations = Illustration.all.order(created_at: :desc)
     if params[:search].present?
       illustrations = Illustration.illustrations_serach(params[:search])
     elsif params[:tag_id].present?
       @tag = Tag.find(params[:tag_id])
-      illustrations = @tag.illustrations.order(created_at: :desc)
+      @illustrations = @tag.illustrations.order(created_at: :desc)
     else
       illustrations = Illustration.all.order(created_at: :desc)
     end
     @tag_lists = Tag.all
+    #タグ投稿一覧
     #@items = Kaminari.paginate_array(items).page(params[:page]).per(10)
   end
 

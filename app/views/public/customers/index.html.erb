@@ -1,11 +1,12 @@
-<div class='container px-5 px-sm-0'>
+<%= stylesheet_link_tag 'customers' %>
+<div class='ccontainer-fluid maxWidth'>
   <div class='row'>
-    <div class='col-3'>
+    <div class='col-3 user_info'>
       <h2>User info</h2>
       <%= render 'public/customers/info', customer: current_customer %>
     </div>
 
-    <div class='col-md-8 offset-md-1'>
+    <div class='col-7'>
         <h2>Users</h2>
         <%= render 'index', customers: @customers %>
     </div>

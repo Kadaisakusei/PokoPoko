@@ -5,7 +5,7 @@
         <td>
           <% if @illustration.illustration_image.attached? %>
             <%= link_to illustration_path(@illustration.id) do %>
-            <%= image_tag @illustration.illustration_image, size: "250x250" %>
+            <%= image_tag @illustration.illustration_image, size: "500x500" %>
             <% end %>
           <% end %>
         </td>

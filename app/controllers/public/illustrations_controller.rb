@@ -29,9 +29,9 @@ class Public::IllustrationsController < ApplicationController
 
   #いいね一覧(index)
   def index
-    @customer = Customer.find(params[:id])
+    @customer = current_customer
     favorites = Favorite.where(customer_id: @customer.id).pluck(:illustration_id)
-    @illustrations = Illustrations.find(favorites)
+    @illustrations = Illustration.where(id: favorites)
   end
 
 

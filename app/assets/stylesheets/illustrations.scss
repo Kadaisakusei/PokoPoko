@@ -1,3 +1,19 @@
 // Place all the styles related to the illustrations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.tag_lists {
+  background-color: rgba(245, 245, 245, 1);
+  width: 20%;
+  margin-bottom: 50px;
+  margin-left: 250px;
+  margin-top: 50px;
+  padding: 30px;
+}
+
+.illustrations {
+  margin-left: 50px;
+}
+
+.each_illustration {
+  margin: 10px;
+}

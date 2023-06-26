@@ -1,27 +1,29 @@
-<div class="container">
+<%= stylesheet_link_tag 'homes' %>
+<div class="container-fluid maxWidth">
      <div class="row">
-       <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-         <main>
-          <p id="notice"></p>
-          <div class="container">
+       <div class="top_page_left">
+       </div>
+       <div class="col-3 main">
             <div class="row">
-             <h1 class="px-3 mx-auto">Welcome to<i class="fas fa-book"></i><strong>PokoPoko</strong>!</h1>
+              <div>
+                <img src="/assets/go023_book_tree.png", class="top_image">
+              </div>
+             <h1 class="slash">Welcome to<strong>PokoPoko</strong></h1>
             </div>
-          </div>
-        </main>
-         <p>In <i class="fas fa-book"></i> BooSkers,</p>
+         <p><i class="fas fa-seedling fa-lg"></i><i class="fas fa-seedling fa-lg"></i><i class="fas fa-seedling fa-lg"></i></p>
          <p>you can share and exchange your opinions , inpressions , and emotions</p>
          <p>about various books!</p>
-         <div class="btn-wrapper col-10 mx-auto"></div>
            <div class="row">
-             <%= link_to "Log in", new_customer_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+             <%= link_to "Log in", new_customer_session_path, class: "btn btn-gray btn-sm btn-block mb-3 sign_in" %>
            </div>
            <div class="row">
-             <%= link_to "Sign up", new_customer_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+             <%= link_to "Sign up", new_customer_registration_path, class: "btn btn-cream btn-sm btn-block mb-3 sign_up" %>
            </div>
-           <div>
-             <%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %>
+           <div class="row">
+             <%= link_to 'Guest Log in', public_guest_sign_in_path, method: :post, class: "btn btn-beige mb-3 btn-sm btn-block" %>
            </div>
+       </div>
+       <div class="top_page">
        </div>
      </div>
 

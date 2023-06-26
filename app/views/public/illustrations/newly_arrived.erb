@@ -1,7 +1,13 @@
-<div class="container">
-<h1>Illustrations#index</h1>
-<p>Find me in app/views/illustrations/index.html.erb</p>
-
-<%= render 'public/illustrations/index',illustrations: @illustrations %>
-
-</div>
+<%= stylesheet_link_tag 'customers' %>
+  <div class="container-fluid maxWidth">
+    <h1 class"newly_arrived_title">Illustrations</h1>
+    <div class="row">
+      <div class="newly_arrived_left">
+      </div>
+      <div class="newly_arrived_illustrations">
+    <%= render 'public/illustrations/index',illustrations: @illustrations %>
+      </div>
+      <div class="newly_arrived_right">
+      </div>
+  </div>
+  </div>

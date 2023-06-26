@@ -27,6 +27,15 @@ class Public::IllustrationsController < ApplicationController
     #@items = Kaminari.paginate_array(items).page(params[:page]).per(10)
   end
 
+  #いいね一覧(index)
+  def index
+    @customer = Customer.find(params[:id])
+    favorites = Favorite.where(customer_id: @customer.id).pluck(:illustration_id)
+    @illustrations = Illustrations.find(favorites)
+  end
+
+
+
   def new
     @illustration = Illustration.new
   end

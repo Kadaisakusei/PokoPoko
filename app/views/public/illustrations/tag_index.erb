@@ -1,25 +1,19 @@
-<div class="container">
-  <div class='col-3'>
-  <h4>タグで探す</h4>
-  <% @tag_lists.each do |list| %>
-  <div>
-    <%= link_to list.tag_name, tag_index_path(tag_id: list.id), class: 'tag_list' %>
-  </div>
-  <% end %>
-  </div>
-
-  <div class='col-8'>
-    <h4>投稿一覧</h4>
-
-    #タグリスト
-    <% @illustrations.each do |illustration| %>
-
-      <%= link_to illustration_path(illustration.id) do %>
-      <%= image_tag illustration.illustration_image, size: "160x160" %>
+<%= stylesheet_link_tag 'illustrations' %>
+<div class="container-fluid maxWidth">
+  <div class='row'>
+    <div class='tag_lists'>
+    <h2>Tags</h2>
+    <% @tag_lists.each do |list| %>
+    <div>
+      <%= link_to list.tag_name, tag_index_path(tag_id: list.id), class: 'tag_list' %>
+    </div>
     <% end %>
-
-    <% end %>
-
+    </div>
+    <div class="container">
+        <div class='illustrations d-flex flex-wrap'>
+              <h2>illustrations</h2>
+                <%= render 'public/illustrations/index',illustrations: @illustrations %>
+          </div>
+    </div>
   </div>
-
 </div>

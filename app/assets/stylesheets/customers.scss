@@ -5,7 +5,7 @@
 .user_info {
   background-color: rgba(245, 245, 245, 1);
   margin-bottom: 50px;
-  margin-left: 150px;
+  margin-left: 200px;
   margin-top: 50px;
   padding: 30px;
 }
@@ -21,4 +21,31 @@
 
 .each_illustration {
   margin: 10px;
+}
+
+.newly_arrived_left {
+  width: 80px;
+  height: 60%;
+  position: absolute;
+  left: 0;
+  border-radius: 0px 30px 30px 0px;
+  background-color: rgba(238, 230, 225, 1);
+}
+
+.newly_arrived_right {
+  width: 80px;
+  height: 60%;
+  position: absolute;
+  right: 0;
+  border-radius: 30px 0px 0px 30px;
+  background-color: rgba(238, 230, 225, 1);
+}
+
+.newly_arrived_illustrations {
+  margin-right: 100px;
+  margin-left: 150px;
+}
+
+.newly_arrived_title {
+  text-align:center;
 }

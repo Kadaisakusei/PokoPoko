@@ -1,18 +1,18 @@
 <div class="container">
   <% if @customers.exists? %>
     <% @customers.each do |customer| %>
-      <<table class="table">
+      <table class="table">
         <thead>
           <th>ICON</th>
           <th>NAME</th>
-          <th>introduction</th>
+          <th>INTRODUCE</th>
           <th></th>
         </thead>
         <tbody>
           <td class="icon bird"><%= image_tag customer.get_profile_image(100,100), size:'100x100' %></td>
           <td><%= customer.name %></td>
           <td><%= customer.introduction %></td>
-          <td><%= link_to 'Show', customer %></td>
+          <td><%= link_to '詳細', customer %></td>
         </tbody>
       </table>
     <% end %>

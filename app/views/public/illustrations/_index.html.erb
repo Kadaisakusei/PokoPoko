@@ -33,6 +33,11 @@
             <% end %>
           </p>
             <p>コメント件数：<%= illustration.post_comments.count %></p>
+              <% illustration.tags.each do |tag|%>
+              <div class="btn btn-outline-info disabled">
+              <%= tag.tag_name%>
+              </div>
+            <% end %>
           </div>
     </table>
     </div>

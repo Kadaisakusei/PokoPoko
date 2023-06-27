@@ -1,22 +1,32 @@
+<%= stylesheet_link_tag 'illustrations' %>
 <div class="container">
   <h2>illustration detail</h2>
-    <table class='table'>
-      <tr>
-        <td>
+  <div class="row">
+      <div>
           <% if @illustration.illustration_image.attached? %>
             <%= link_to illustration_path(@illustration.id) do %>
             <%= image_tag @illustration.illustration_image, size: "500x500" %>
             <% end %>
           <% end %>
-        </td>
+      </div>
+    <div class="container">
+    <table class='table'>
+      <thead>
+        <th>タイトル</th>
+        <th>説明</th>
+        <th></th>
+      </thead>
+      <tbody>
         <td><%= link_to @illustration.title, @illustration %></td>
         <td><%= @illustration.body %></td>
           <% if @illustration.customer_id == current_customer.id %>
             <td><%= link_to 'Edit', edit_illustration_path(@illustration), class: "btn btn-sm btn-success" %></td>
             <td><%= link_to 'Destroy', @illustration, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>
           <% end %>
-      </tr>
+      </tbody>
     </table>
+    </div>
+  </div>
       <p>コメント件数：<%= @illustration.post_comments.count %></p>
       <table>
               <% @illustration.post_comments.each do |post_comment| %>
@@ -37,9 +47,23 @@
                 <%= f.submit "送信する" %>
               <% end %>
             </div>
-
             <% @illustration.tags.each do |tag|%>
-            <%= tag.tag_name%>
+              <div class="btn btn-outline-info disabled">
+              <%= tag.tag_name%>
+              </div>
             <% end %>
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

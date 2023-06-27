@@ -1,24 +1,29 @@
-<h2>Results index</h2>
+<div class="container">
+  <h2>Results index</h2>
 
-<table class="table table-hover table-inverse">
-  <!--検索対象モデルがUserの時 -->
-  <% if @range == "Customer" %>
-    <tbody>
-      <% @customers.each do |customer| %>
-        <tr>
-          <td><%= customer.name %></td>
-        </tr>
+    <table class="table table-hover table-inverse">
+      <!--検索対象モデルがUserの時 -->
+      <% if @range == "Customer" %>
+        <tbody>
+          <% @customers.each do |customer| %>
+            <tr>
+              <td><%= image_tag customer.get_profile_image(100,100), size:'100x100' %></td>
+              <td><%= customer.name %></td>
+              <td><%= link_to '詳細', customer %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      <% else %>
+        <!--検索対象モデルがUserではない時(= 検索対象モデルがBookの時) -->
+        <tbody>
+          <% @illustrations.each do |illustration| %>
+            <tr>
+              <td><%= image_tag illustration.illustration_image, size: "80x80" %></td>
+              <td><%= link_to illustration.title,illustration %></td>
+              <td><%= illustration.body %></td>
+            </tr>
+          <% end %>
+        </tbody>
       <% end %>
-    </tbody>
-  <% else %>
-    <!--検索対象モデルがUserではない時(= 検索対象モデルがBookの時) -->
-    <tbody>
-      <% @illustrations.each do |illustration| %>
-        <tr>
-          <td><%= illustration.title %></td>
-          <td><%= illustration.body %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  <% end %>
-</table>
+    </table>
+</div>
